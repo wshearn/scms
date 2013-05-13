@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+  div.container-fluid
+    br
+    div.row-fluid
+      div.span2
+        div.well.sidebar-nav
+          li.nav-header Tags
+          ul.nav.nav-pills
+            each tag in tags
+              li
+                a(href="/blog/tag/#{tag}.html")
+                  | #{tag}
+      div.span10
+        for post in posts
+          section#intro
+            div.hero-unit
+              h2 #{post.title}
+              p #{post.summary}
+              div.row-fluid
+                div.span9
+                div.span3
+                  p 
+                    a(href="/blog/#{post.friendlyURL}.html").btn.btn-inverse.btn-large
+                      | Read Post &raquo;
+
+  div#push

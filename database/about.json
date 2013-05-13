@@ -1,0 +1,64 @@
+{
+  "jobs" : [
+    {
+      "section" : "redhat",
+      "company" : "Red Hat",
+      "title" : "Systems Engineer",
+      "startYear" : "2012",
+      "endYear" : "Present",
+      "responsibilities" : [
+        {
+          "task" : "General Systems Maintaince (Security Updates, Making sure they are running fine, etc)"
+        },
+        {
+          "task" : "Act as a primary contact point between Ops and Devs for each release"
+        },
+        {
+          "task" : "Maintain our logging infrastructure"
+        }
+      ]
+    },
+    {
+      "section" : "ibm",
+      "company" : "IBM",
+      "title" : "Blade Interoperability Tester",
+      "startYear" : "2011",
+      "endYear" : "2012",
+      "responsibilities" :[
+        {
+          "task" : "Set up and configured blade servers"
+        },
+        {
+          "task" : "Install and configured AIX, RHEL, SLES, Windows Server 2008"
+        },
+        {
+          "task" : "Tested the systems and wrote defects for any errors"
+        },
+        {
+          "task" : "Worked closely with the developers to ensure known bugs got fixed"
+        }
+      ]
+    },
+    {
+      "section" : "campbell",
+      "company" : "Campbell University",
+      "title" : "Student Lab Technician",
+      "startYear" : "2008",
+      "endYear" : "2009",
+      "responsibilities" :[
+        {
+          "task" : "Maintained a lab of 9 Windows XP/Vista systems"
+        },
+        {
+          "task" : "Kept all systems update to date"
+        },
+        {
+          "task" : "Installed any software requested by students, as per policy"
+        },
+        {
+          "task" : "Did software troubleshooting"
+        }
+      ]
+    }
+  ]
+} 

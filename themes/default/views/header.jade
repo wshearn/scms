@@ -1,0 +1,33 @@
+div.navbar.navbar-inverse.navbar-static-top
+    div.navbar-inner
+        a.btn.btn-navbar(data-toggle="collapse", data-target=".nav-collapse")
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+        a.brand(href="/index.html")
+            | Wesley's Site
+        div.nav-collapse.collapse
+            ul.nav
+                each item in index
+                    if (item.active == true)
+                        li.active
+                            a(href="#{item.url}")
+                                | #{item.title}
+                    else
+                        li
+                            a(href="#{item.url}")
+                                | #{item.title}
+        div.pull-right(style="display; inline-block")
+            ul.nav
+                li
+                    if !loggedIn
+                        a(href="/admin/login.html")
+                            | Login
+                    else
+                        a(href="/admin/logout.html")
+                            | LogOut
+section#top
+    header.jumbotron.subhead#overview
+        div.container
+          h1 #{title}
+          p.lead #{subHeader}

@@ -1,0 +1,51 @@
+extends ../layout
+
+block content
+  div.container-fluid
+    br
+    div.row-fluid
+      div.span2
+        div.well.sidebar-nav
+          li.nav-header Tags
+          ul.nav.nav-pills
+            each tag in tags
+              li
+                a(href="/blog/tag/#{tag}.html")
+                  | #{tag}
+      div.span10
+        section#intro
+          div.hero-unit
+            h2 #{newest.title}
+            p #{newest.summary}
+            div.row-fluid
+              div.span10
+              div.span2(align="right")
+                p 
+                  a(href="/blog/#{newest.friendlyURL}.html").btn.btn-inverse.btn-large
+                    | Read Post &raquo;
+        each post, i in old
+          div.row-fluid
+            div.span6
+              div.hero-unit
+                h3 #{old[i]["title"]}
+                p #{old[i]["summary"]}
+                  div.row-fluid
+                    div.span9
+                    div.span3(align="right")
+                      p 
+                        a(href="/blog/#{old[i]["friendlyURL"]}.html").btn.btn-inverse.btn-large
+                          | Read Post &raquo;
+            if (typeof(old[i+1]) !== 'undefined')
+              div.span6
+                div.hero-unit
+                  h3 #{old[i+1]["title"]}
+                  p #{old[i+1]["summary"]}
+                    div.row-fluid
+                      div.span9
+                      div.span3(align="right")
+                        p 
+                          a(href="/blog/#{old[i+1]["friendlyURL"]}.html").btn.btn-inverse.btn-large
+                            | Read Post &raquo;
+            i = i+1
+
+  div#push

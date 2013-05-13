@@ -1,0 +1,27 @@
+extends ../../layout
+
+block content
+  div.container-fluid
+    br
+    div.row-fluid
+      div.span2
+        div.well.sidebar-nav
+          li.nav-header System
+          ul.nav.nav-list
+            li
+              a(href="/admin/system/site.html")
+                | Site
+            li
+              a(href="/admin/system/users.html")
+                | Users
+          li.nav-header Modules
+          ul.nav.nav-list
+            each module in modules
+              li
+                a(href="/admin/module/#{module.metadata.name}.html")
+                  | #{module.metadata.name}
+      div.span10
+        div.hero-unit
+          h1 Welcome back #{user.name}!
+
+  div#push

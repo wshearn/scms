@@ -1,0 +1,21 @@
+!!! 5
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		block head
+			title= title
+			link(rel='stylesheet', href='/css/bootstrap.css')
+			link(rel='stylesheet', href='/css/style.css')
+			| <style>
+			| #wrap > .container { padding-top: 60px; }
+			| #wrap > .jumbotron { padding-top: 60px; }
+			| #footer-center { text-align: center }
+			| </style>
+			script(src='/js/bootstrap.min.js')
+			script(src='/js/jquery.js')
+			script(src='/js/html5shiv.js')
+		div#wrap
+			include header
+			block content
+
+		include footer

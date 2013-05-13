@@ -1,0 +1,107 @@
+extends ../layout
+
+block content
+  div.container-fluid
+    br
+    div.row-fluid
+      div.span2
+        div.well.sidebar-nav
+          ul.nav.nav-list
+            li
+              a(href="#intro")
+                | Quick Intro
+            li
+              a(href="#site")
+                | About This Site
+            li
+              a(href="#resume")
+                  | Work History
+
+      div.span10
+        section#intro
+          div.hero-unit
+            div.page-header
+              h1 Quick Intro
+            h3 Who am I?
+            p Well first, I am Wesley Hearn. That really means nothing to you or else you wouldn't be reading this :).
+              | First, I am pretty much your average geek. I currently work for Red Hat as a Systems Engineer on 
+              a(target="_blank", href="http://www.openshift.com")
+                | OpenShift 
+              .
+            br
+            div.row
+              div.span11
+              div.span1
+                a(href="#top").btn.btn-inverse.btn-large
+                  | Top
+        br
+        br
+
+        div.hero-unit
+          section#site
+            br
+            div.page-header
+              h1 About This site
+            h3 What the hell is up with this site?
+            p Ok, so first of all this site is written in 
+              a(target="_blank", href="http://www.nodejs.org/")
+                | Node.js
+              . It uses 
+              a(target="_blank", href="http://expressjs.com/")
+                | ExpressJS 
+              | for the actual server. For the HTML template engine I use 
+              a(target="_blank", href="http://jade-lang.com/")
+                | Jade 
+              | and finally for the theme I use the amazing 
+              a(target="_blank", href="http://twitter.github.io/bootstrap")
+                | bootstrap 
+              | theme from Twitter.
+            p As for hosting well, eat your own dog food :) ie it is hosted on 
+              a(target="_blank", href="http://www.openshift.com")
+                | OpenShift 
+              . You can find the source for this site on GitHub.
+            br
+            div.row
+              div.span11
+              div.span1
+                a(href="#top").btn.btn-inverse.btn-large
+                  | Top
+        br
+        br
+
+        div.hero-unit
+          section#resume
+            br
+            div.page-header
+              h1 My Work History
+              br
+              ul.nav.nav-pills
+                each job in jobs
+                  li
+                    a(href="#resume_#{job.section}")
+                      | #{job.company}
+
+            each job in jobs
+              section(id=("#resume_#{job.section}"))
+                br
+                div.row
+                  div.span10
+                    h3 #{job.company} - #{job.title}
+                  div.span2
+                    h3 #{job.startYear} - #{job.endYear}
+                h4 Responsibilities
+                ul
+                  each responsibilitie in job.responsibilities
+                    li #{responsibilitie.task}
+                div.row
+                  div.span10
+                  div.span2
+                    a(href="#top").btn.btn-inverse.btn-large
+                      | Top
+                    | 
+                    a(onClick="history.back()").btn.btn-inverse.btn-large
+                      | Back
+                hr
+    br
+    br
+    div#push

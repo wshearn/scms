@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+  div.container-fluid
+    br
+    div.row-fluid
+      div.span2
+        div.well.sidebar-nav
+          li.nav-header Tags
+          ul.nav.nav-pills
+            each tag in tags
+              li
+                a(href="/blog/tag/#{tag}.html")
+                  | #{tag}
+      div.span10
+        div.hero-unit
+          section
+            != md(content)
+          div.row-fluid
+            div.span11
+            div.span1
+                a(href="/blog.html").btn.btn-inverse.btn-large
+                  | &laquo; Back
+
+  div#push

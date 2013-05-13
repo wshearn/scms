@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+  div.container-fluid
+    br
+    div.row-fluid
+        div.hero-unit
+          form(method="post",action='/contact/submit.html')
+            fieldset
+              legend General
+              p
+                label(for="message[name]") Username:
+                  input(type="text", name="message[name]", value=message.name)
+              p
+                label(for="message[email]") Email:
+                  input(type="text", name="message[email]", value=message.email)
+                  .tip.
+                    Enter a valid 
+                    email address 
+                    such as <em>tj@vision-media.ca</em>.
+            fieldset
+              p
+                label(for="message[message]") Message:
+                  textarea(rows="4", cols="20", name="message[message]")
+                    | #{message.message}
+            p.buttons
+              input(type="submit", value="Send")
+
+
+  div#push
