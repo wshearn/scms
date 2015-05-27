@@ -1,10 +1,16 @@
-var config = {}
+var config = {
+    web: {}
+  , db: {}
+  , site: {}
+};
 
-config.web  = {};
-config.db   = {};
-config.site = {};
-
-config.modules = ["index", "admin", "about", "blog", "contact" ];
+config.modules = [
+    "index"
+  , "admin"
+  , "about"
+  , "blog"
+  , "contact"
+];
 
 // IP:Port to listen on
 config.web.host   = "localhost";
@@ -22,13 +28,13 @@ config.site.env   = "development";
 config.site.theme = "default";
 
 // OpenShift settings.
-if (typeof(process.env.OPENSHIFT_INTERNAL_IP) != "undefined")
+if (typeof(process.env.OPENSHIFT_INTERNAL_IP) === 'string')
 {
   config.web.ip   = process.env.OPENSHIFT_INTERNAL_IP;
   config.web.port = process.env.OPENSHIFT_INTERNAL_PORT;
 }
 
-if (config.db.type == "mongo" && typeof(process.env.OPENSHIFT_MONGODB_PORT) != "undefined")
+if (config.db.type == "mongo" && typeof(process.env.OPENSHIFT_MONGODB_PORT)  === 'string')
 {
   config.db.user    = process.env.OPENSHIFT_MONGO_DB_USERNAME;
   config.db.pass    = process.env.OPENSHIFT_MONGO_DB_PASSWORD;
